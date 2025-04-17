@@ -25,6 +25,41 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## Available Routes
+
+The application provides the following API endpoints:
+
+### Ask Module
+- **POST /ask**
+  - Description: Send a message to the OpenAI API and get a response
+  - Request Body:
+    ```json
+    {
+      "messages": [
+        {
+          "role": "user" | "assistant" | "system",
+          "content": "string"
+        }
+      ]
+    }
+    ```
+  - Response:
+    ```json
+    {
+      "role": "assistant",
+      "content": "string"
+    }
+    ```
+  - Error Response:
+    ```json
+    {
+      "role": "assistant",
+      "content": "string",
+      "error": "openai_error" | "internal_error",
+      "details": "string"
+    }
+    ```
+
 ## Project setup
 
 ```bash
